@@ -1,0 +1,121 @@
+<!--DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Multiplayer-Tinder-host </title>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="nameContainer">
+        <div class="name" id="name">
+            <p id="name">
+                Emilie
+            </p>    
+        </div>
+    </div>
+
+    <div class="imgContainer">
+        <img class="pic" src="./media/qrcode-api1.png" alt="pic">
+        <div class="imgSlider">
+            <ul></ul>
+        </div>
+    </div>
+
+    <div class="box-conponent info">
+        <div class="box-conponent heading">
+            <p>Info:</p>
+        </div>
+        <div class="textArea" id="info">
+            <ul>
+                <li id="bio">
+
+                </li>
+                <li id="age">
+                
+                </li>
+                <li id="distance">
+
+                </li>
+                <li id="starsign">
+
+                </li>
+                <li id="school">
+
+                </li>
+                <li id="lives_in">
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="vote-time-container">
+        <div class="vote container">
+            <div class="votes">
+                <ul id="players">
+                    <li>Marcus</li>
+                    <li>Leif</li>
+                </ul>
+            </div>
+        </div>
+        <div class="time-text-box">
+            <p>Time remaining: </p>
+        </div>
+        <div class="timerBox">
+            <p>15s</p>
+        </div>
+    </div>
+    <button onclick="get_data();">sdfgh</button>
+</body>
+</html-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>WebSocker Client</title>
+
+    </head>
+
+    <body>
+
+        <button onclick="contactServer">Click Here</button>
+
+    </body>
+
+    <script>
+
+        const socket = new WebSocket('ws://127.0.0.1:8080');
+
+        socket.addEventListener('open', function (event) {
+
+            socket.send('Connection Established');
+
+        });
+
+
+        socket.addEventListener('message', function (event) {
+
+            console.log(event.data);
+
+        });
+
+        const contactServer = () => {
+
+            socket.send("Initialize");
+
+        }
+    </script>
+
+</html>
